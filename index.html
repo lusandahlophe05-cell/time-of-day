@@ -62,10 +62,48 @@
            the background color using document.querySelector('html') 
         */
 
-        // Fixes HTML/CSS Checker links
-        if(){
 
-        }else
+
+        myDate = new Date();
+        myHour = myDate.getHours();
+        mySentence =" ";
+        myColor = "";
+
+        if(myHour >= 12){
+        //alert("it after noon!")
+        mySentence = "it's after noon!";
+        myColor ="blue";
+        } else{
+        //alert("It is not  after noon!")
+        mySentence = "it's not after noon!";
+        myColor ="purple";
+        }
+        document.getElementById("time-text").innerHMTL = mySentence ;
+        document.body.style.background= myColor;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Fixes HTML/CSS Checker links
+        
 
 
         document.addEventListener("DOMContentLoaded", function() {
