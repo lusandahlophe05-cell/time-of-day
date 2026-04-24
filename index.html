@@ -61,21 +61,31 @@
         /* Below, we would target the 'html' element to change 
            the background color using document.querySelector('html') 
         */
-
-
-
+        const img=document.createElement("img");
+        img.src = "images/go to work.gif";
+        document.body.appendChild(img);
         myDate = new Date();
         myHour = myDate.getHours();
         mySentence =" ";
         myColor = "";
 
-        if(myHour >= 12){
-        //alert("it after noon!")
-        mySentence = "it's after noon!";
-        myColor ="blue";
-        } else{
+        if(myHour >= 5 && myHour <= 12){
+        mySentence = " drink your coffee";
+        myColor ="pink";
+        }
+        else if(myHour > 12 && myHour <= 6 ) {
         //alert("It is not  after noon!")
-        mySentence = "it's not after noon!";
+        mySentence = "watch the clock until the end of work the day";
+        myColor ="purple";
+        }
+        else if(myHour > 6 && myHour <= 11 ) {
+        //alert("It is not  after noon!")
+        mySentence = " dinner, bad, sleep";
+        myColor ="purple";
+        }
+        else if(myHour > 11 && myHour <= 5 ) {
+        //alert("It is not  after noon!")
+        mySentence = " start the day";
         myColor ="purple";
         }
         document.getElementById("time-text").innerHMTL = mySentence ;
