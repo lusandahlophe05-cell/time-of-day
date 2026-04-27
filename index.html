@@ -39,17 +39,23 @@
           /* Adds a "Snazzy" Shadow: horizontal, vertical, blur, spread, and color */
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
         }
+        #time{
+             border: 3px solid black;
+             border-radius: 5px;
+             display: inline-block;
+             padding: 5px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1 id="main-greeting">Time of Day by Sanda Hlophe</h1>
-        
+        <p id="time"> here is the time</p>
         <h2 id="time-text">What time is it?</h2>
-
+        
         <p>This page will change based on the hour of the day.</p>
-        <p>Add your explanation of what the page does, and how it works here.</p>
+        <p>This page will let you know the time. The color, images and message will change depending on the time.</p>
 
       <img id="time-pic" src="images/go to work.gif" alt="Time of Day Image">
      
@@ -70,9 +76,10 @@
         
         const myDate = new Date();
         var myHour = myDate.getHours();
+        var myMinutes = myDate.getMinutes();
 		var mySentence =" ";
        var myColor = "";
-		document.getElementById("time-text").textContent = myHour.toString().padStart(2,'0');
+		document.getElementById("time").textContent = myHour.toString().padStart(2,'0')+":"+myMinutes.toString().padStart(2,'0');
 
         
 
