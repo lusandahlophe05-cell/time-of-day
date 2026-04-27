@@ -52,6 +52,7 @@
     <div class="container">
         <h1 id="main-greeting">Time of Day by Sanda Hlophe</h1>
         <p id="time"> here is the time</p>
+        <P id="dayOfWeek"> This is were the day of the week will go </P>
         <h2 id="time-text">What time is it?</h2>
         
         <p>This page will change based on the hour of the day.</p>
@@ -74,13 +75,17 @@
         const img = document.getElementById("time-pic");
         //img.src = "images/go to work.gif";
         
+        const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Firday","Saturday"];
+        const d = new Date();
+        let day = weekday[d.getUTCDay()];
         const myDate = new Date();
         var myHour = myDate.getHours();
         var myMinutes = myDate.getMinutes();
+       
 		var mySentence =" ";
        var myColor = "";
 		document.getElementById("time").textContent = myHour.toString().padStart(2,'0')+":"+myMinutes.toString().padStart(2,'0');
-
+        document.getElementById("dayOfWeek").textContent = day;
         
 
         if(myHour >= 5 && myHour <= 12){
