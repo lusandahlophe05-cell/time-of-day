@@ -51,7 +51,8 @@
         <p>This page will change based on the hour of the day.</p>
         <p>Add your explanation of what the page does, and how it works here.</p>
 
-        <img id="time-pic" src="https://dummyimage.com/300x400" alt="Time of Day Image">
+        <img id="time-pic" src="go to work.gif" alt="Time of Day Image">
+        <img id="time-pic" src="go to work.gif" alt="Time of Day Image">
     </div>
 
     <script>
@@ -61,34 +62,38 @@
         /* Below, we would target the 'html' element to change 
            the background color using document.querySelector('html') 
         */
-        const img=document.createElement("img");
+
+        const img = document.createElement("img");
         img.src = "images/go to work.gif";
-        document.body.appendChild(img);
-        myDate = new Date();
-        myHour = myDate.getHours();
-        mySentence =" ";
-        myColor = "";
+        
+        const myDate = new Date();
+        var myHour = myDate.getHours();
+		var mySentence =" ";
+       var myColor = "";
+		document.getElementById("time-text").textContent = myHour.toString().padStart(2,'0');
 
         if(myHour >= 5 && myHour <= 12){
-        mySentence = " drink your coffee";
+        mySentence = "drink your coffee";
         myColor ="pink";
         }
-        else if(myHour > 12 && myHour <= 6 ) {
+        else if(myHour > 12 && myHour <= 18 ) {
         //alert("It is not  after noon!")
         mySentence = "watch the clock until the end of work the day";
-        myColor ="purple";
+        myColor ="green";
         }
-        else if(myHour > 6 && myHour <= 11 ) {
+        else if(myHour > 18 && myHour <= 23 ) {
         //alert("It is not  after noon!")
         mySentence = " dinner, bad, sleep";
-        myColor ="purple";
+        myColor ="red";
         }
-        else if(myHour > 11 && myHour <= 5 ) {
+        else {
         //alert("It is not  after noon!")
         mySentence = " start the day";
-        myColor ="purple";
+        myColor = "blue";
+		
         }
-        document.getElementById("time-text").innerHMTL = mySentence ;
+		
+        document.getElementById("time-text").textContent = mySentence;
         //document.body.style.background= myColor;
         document.querySelector('html') .style.backgroundColor = myColor;
 
