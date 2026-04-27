@@ -51,8 +51,10 @@
         <p>This page will change based on the hour of the day.</p>
         <p>Add your explanation of what the page does, and how it works here.</p>
 
-        <img id="time-pic" src="go to work.gif" alt="Time of Day Image">
-        <img id="time-pic" src="go to work.gif" alt="Time of Day Image">
+      <img id="time-pic" src="images/go to work.gif" alt="Time of Day Image">
+     
+      
+
     </div>
 
     <script>
@@ -63,8 +65,8 @@
            the background color using document.querySelector('html') 
         */
 
-        const img = document.createElement("img");
-        img.src = "images/go to work.gif";
+        const img = document.getElementById("time-pic");
+        //img.src = "images/go to work.gif";
         
         const myDate = new Date();
         var myHour = myDate.getHours();
@@ -72,25 +74,30 @@
        var myColor = "";
 		document.getElementById("time-text").textContent = myHour.toString().padStart(2,'0');
 
+        
+
         if(myHour >= 5 && myHour <= 12){
         mySentence = "drink your coffee";
         myColor ="pink";
+        img.src = "images/Morning image.webp";
         }
         else if(myHour > 12 && myHour <= 18 ) {
         //alert("It is not  after noon!")
         mySentence = "watch the clock until the end of work the day";
         myColor ="green";
+        img.src = "images/work is over.gif";
         }
         else if(myHour > 18 && myHour <= 23 ) {
         //alert("It is not  after noon!")
-        mySentence = " dinner, bad, sleep";
+        mySentence = " dinner, bed, sleep";
         myColor ="red";
+        img.src = "images/dinner sleep bed.jpg";
         }
         else {
         //alert("It is not  after noon!")
         mySentence = " start the day";
         myColor = "blue";
-		
+        img.src = "images/go to work.gif";
         }
 		
         document.getElementById("time-text").textContent = mySentence;
