@@ -76,9 +76,9 @@
         //img.src = "images/go to work.gif";
         
         const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Firday","Saturday"];
-        const d = new Date();
-        let day = weekday[d.getUTCDay()];
-        const myDate = new Date();
+        const myDate = new Date();  
+        let day = weekday[myDate.getDay()];
+      
         var myHour = myDate.getHours();
         var myMinutes = myDate.getMinutes();
        
